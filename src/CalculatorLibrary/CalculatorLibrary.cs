@@ -5,12 +5,12 @@ using Newtonsoft.Json;
 
 namespace CalculatorLibrary
 {
-    public class Calculator
+    public class LibraryCalculator
     {
 
         JsonWriter writer;
 
-        public Calculator()
+        public LibraryCalculator()
         {
             StreamWriter logFile = File.CreateText("calculatorlog.json");
             logFile.AutoFlush = true;
@@ -55,6 +55,7 @@ namespace CalculatorLibrary
                     break;
                 // Return text for an incorrect option entry.
                 default:
+                    writer.WriteValue("DoNothing");
                     break;
             }
             writer.WritePropertyName("Result");
