@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "src\Calculato
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorLibrary", "src\CalculatorLibrary\CalculatorLibrary.csproj", "{27241E50-C70A-4D62-AC42-1D65A4839117}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorTests", "tests\CalculatorTests\CalculatorTests.csproj", "{28B22749-7D5D-4673-975D-3D89B7477C07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorTests", "tests\CalculatorTests\CalculatorTests.csproj", "{28B22749-7D5D-4673-975D-3D89B7477C07}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{400E32BD-F1DB-4660-B4D9-4306B237CD3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{337234E5-084C-46AF-AAC6-76AB72C1BBBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +34,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B830FFED-3840-41FE-9029-9F8A5B308888} = {400E32BD-F1DB-4660-B4D9-4306B237CD3A}
+		{27241E50-C70A-4D62-AC42-1D65A4839117} = {400E32BD-F1DB-4660-B4D9-4306B237CD3A}
+		{28B22749-7D5D-4673-975D-3D89B7477C07} = {337234E5-084C-46AF-AAC6-76AB72C1BBBE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF9CDAC3-07C4-4F0D-9C34-76D66AD5E3C6}
