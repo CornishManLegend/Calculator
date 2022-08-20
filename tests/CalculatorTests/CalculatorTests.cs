@@ -48,6 +48,14 @@ namespace CalculatorTests
             Assert.Equal(double.NaN, result);
         }
 
+        [Fact]
+        public void shuldDoNothing()
+        {
+            LibraryCalculator calculator = new LibraryCalculator();
+            double result = calculator.DoOperation(2, 2, "");
+            Assert.Equal(double.NaN, result);
+        }
+
 
 
     }

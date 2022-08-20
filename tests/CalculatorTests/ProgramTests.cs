@@ -12,11 +12,30 @@ namespace Calculator
     {
 
         [Fact]
+        public void ShouldMockConsoleWorkProperly()
+        {
+
+            MockConsole mockConsole = new MockConsole();
+
+            var expected =
+                    "Console Calculator in C#" +
+                    "------------------------" +
+                    "Type a number, and then press Enter: ";
+            mockConsole.Output.Enqueue(expected);
+            var actual = mockConsole.ReadLine();
+            Assert.Equal(expected, actual);
+
+        }
+
+
+        [Fact]
         public void ShouldDoAdditionWithMockConsole()
         {
             MockConsole mockConsole = new MockConsole();
             Program program = new Program();
             program.MyConsole = mockConsole;
+            StringWriter stringWriter = new StringWriter();
+            Console.SetOut(stringWriter);
             mockConsole.Output.Enqueue("2");
             mockConsole.Output.Enqueue("2");
             mockConsole.Output.Enqueue("a");
