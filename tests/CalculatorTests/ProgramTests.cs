@@ -50,8 +50,6 @@ namespace Calculator
             MockConsole mockConsole = new MockConsole();
             Program program = new Program();
             program.MyConsole = mockConsole;
-            StringWriter stringWriter = new StringWriter();
-            Console.SetOut(stringWriter);
             mockConsole.Output.Enqueue("2");
             mockConsole.Output.Enqueue("2");
             mockConsole.Output.Enqueue("a");
@@ -183,15 +181,10 @@ namespace Calculator
             MockConsole mockConsole = new MockConsole();
             Program program = new Program();
             program.MyConsole = mockConsole;
-
-            StringBuilder stringBuilder = new StringBuilder();
-
             mockConsole.Output.Enqueue("2");
             mockConsole.Output.Enqueue("0");
             mockConsole.Output.Enqueue("d");
             mockConsole.Output.Enqueue("n");
-            StringReader stringReader = new StringReader(stringBuilder.ToString());
-            Console.SetIn(stringReader);
 
             program.RunCalculator();
             var expectedResult = "Console Calculator in C#" +
