@@ -1,3 +1,4 @@
+using CalculatorLibrary;
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 using System;
 using System.Globalization;
@@ -12,20 +13,35 @@ namespace Calculator
     {
 
         [Fact]
-        public void ShouldMockConsoleWorkProperly()
+        public void ShouldMainWorkProperly()
         {
-
-            MockConsole mockConsole = new MockConsole();
-
-            var expected =
-                    "Console Calculator in C#" +
-                    "------------------------" +
-                    "Type a number, and then press Enter: ";
-            mockConsole.Output.Enqueue(expected);
-            var actual = mockConsole.ReadLine();
-            Assert.Equal(expected, actual);
+            StringWriter stringWriter = new StringWriter();
+            Console.SetOut(stringWriter);
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine("2");
+            stringBuilder.AppendLine("2");
+            stringBuilder.AppendLine("a");
+            stringBuilder.AppendLine("n");
+            StringReader stringReader = new StringReader(stringBuilder.ToString());
+            Console.SetIn(stringReader);
+            Program.Main(new string[0]);
+            var expectedResult = "Console Calculator in C#" +
+                                 "------------------------" +
+                                 "Type a number, and then press Enter: " +
+                                 "Type another number, and then press Enter: " +
+                                 "Choose an operator from the following list:" +
+                                 "a - Add" +
+                                 "s - Subtract" +
+                                 "m - Multiply" +
+                                 "d - Divide" +
+                                 "Your option? " +
+                                 "Your result: 4" +
+                                 "------------------------" +
+                                 "Press 'n' and Enter to close the app, or press any other key and Enter to continue: ";
+            Assert.Equal(expectedResult, Regex.Replace(stringWriter.ToString(), @"[\r\t\n]+", string.Empty));
 
         }
+
 
 
         [Fact]

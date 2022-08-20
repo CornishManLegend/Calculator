@@ -49,7 +49,7 @@ namespace CalculatorTests
         }
 
         [Fact]
-        public void shuldDoNothing()
+        public void shouldDoNothing()
         {
             LibraryCalculator calculator = new LibraryCalculator();
             double result = calculator.DoOperation(2, 2, "");

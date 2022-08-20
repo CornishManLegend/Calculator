@@ -10,7 +10,7 @@ namespace Calculator
         void WriteLine(string input, params object[] args);
     }
 
-    class DefaultConsole : IConsole
+    public class DefaultConsole : IConsole
     {
         string IConsole.ReadLine()
         {
