@@ -62,19 +62,12 @@ namespace Calculator
 
                 string op = MyConsole.ReadLine();
 
-                try
+                result = calculator.DoOperation(cleanNum1, cleanNum2, op);
+                if (double.IsNaN(result))
                 {
-                    result = calculator.DoOperation(cleanNum1, cleanNum2, op);
-                    if (double.IsNaN(result))
-                    {
-                        MyConsole.WriteLine("This operation will result in a mathematical error.\n");
-                    }
-                    else MyConsole.WriteLine("Your result: {0:0.##}\n", result);
+                    MyConsole.WriteLine("This operation will result in a mathematical error.\n");
                 }
-                catch (Exception e)
-                {
-                    MyConsole.WriteLine("Oh no! An exception occurred trying to do the math.\n - Details: " + e.Message);
-                }
+                else MyConsole.WriteLine("Your result: {0:0.##}\n", result);
 
                 MyConsole.WriteLine("------------------------\n");
 
@@ -84,7 +77,6 @@ namespace Calculator
 
                 MyConsole.WriteLine("\n"); // Friendly linespacing.
             }
-            calculator.Finish();
             return;
         }
     }

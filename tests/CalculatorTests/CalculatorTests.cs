@@ -13,7 +13,6 @@ namespace CalculatorTests
         {
             LibraryCalculator calculator = new LibraryCalculator();
             double result = calculator.DoOperation(2.0, 2.0, "a");
-            calculator.Finish();
             Assert.Equal(4.0, result);
         }
 
@@ -22,7 +21,6 @@ namespace CalculatorTests
         {
             LibraryCalculator calculator = new LibraryCalculator();
             double result = calculator.DoOperation(2, 2, "s");
-            calculator.Finish();
             Assert.Equal(0, result);
         }
 
@@ -31,7 +29,6 @@ namespace CalculatorTests
         {
             LibraryCalculator calculator = new LibraryCalculator();
             double result = calculator.DoOperation(2, 2, "m");
-            calculator.Finish();
             Assert.Equal(4, result);
         }
 
@@ -40,7 +37,6 @@ namespace CalculatorTests
         {
             LibraryCalculator calculator = new LibraryCalculator();
             double result = calculator.DoOperation(2, 2, "d");
-            calculator.Finish();
             Assert.Equal(1, result);
         }
 
@@ -49,7 +45,6 @@ namespace CalculatorTests
         {
             LibraryCalculator calculator = new LibraryCalculator();
             double result = calculator.DoOperation(2, 2, "ddd");
-            calculator.Finish();
             Assert.Equal(double.NaN, result);
         }
 
