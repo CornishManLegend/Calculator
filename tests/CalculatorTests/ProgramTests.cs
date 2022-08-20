@@ -11,26 +11,6 @@ namespace Calculator
     public class ProgramTests
     {
 
-
-
-        [Fact]
-        public void ShouldMockConsoleWorkProperly()
-        {
-            MockConsole mockConsole = new MockConsole();
-
-            var expected =
-                    "Console Calculator in C#" +
-                    "------------------------" +
-                    "Type a number, and then press Enter: ";
-
-            mockConsole.Output.Enqueue(expected);
-            var actual = mockConsole.ReadLine();
-
-            Assert.Equal(expected, actual);
-
-        }
-
-
         [Fact]
         public void ShouldDoAdditionWithMockConsole()
         {
