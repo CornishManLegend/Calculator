@@ -180,7 +180,7 @@ namespace Calculator
 
 
         [Fact]
-        public void Should—onsoleBeRunnedWithIncorrectInputData()
+        public void ShouldConsoleBeRunnedWithIncorrectInputData()
         {
             MockConsole mockConsole = new MockConsole();
             Program program = new Program();
